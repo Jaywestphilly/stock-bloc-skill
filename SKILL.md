@@ -14,6 +14,7 @@ Priced endpoints return HTTP 402 with a PAYMENT-REQUIRED header (x402 v2, networ
 - SB Score quant signal: GET https://stockbloc.ai.studio/api/v1/intelligence/sb-score?ticker=NVDA — $0.05
 - SEC 13F institutional holdings (quarterly 13F-HR, not real-time): GET https://stockbloc.ai.studio/api/v1/data/sec?ticker=NVDA — $0.10
 - SEC filing job (10-K, 10-Q, 8-K): POST https://stockbloc.ai.studio/api/v1/sec/job with JSON {"ticker":"AAPL","filingType":"10-K"} — $0.25
+- SEC filing diff (10-K, 10-Q): same endpoint with {"ticker":"MSFT","filingType":"10-K","mode":"diff"} compares the latest filing with the prior one: financial changes plus risk factors added, removed and changed, with verbatim snippets. $0.25 USDC on Base, pay per call via x402.
 - Research memo: POST https://stockbloc.ai.studio/api/v1/intelligence/research — $0.10
 - Forecast: POST https://stockbloc.ai.studio/api/v1/intelligence/forecasts — $0.05
 - Strategy backtest: POST https://stockbloc.ai.studio/api/v1/agent/strategy/evaluate — $0.10
